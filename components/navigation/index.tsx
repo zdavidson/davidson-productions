@@ -4,6 +4,7 @@ import Logo from "../logo";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import SchoolIcon from "@mui/icons-material/School";
 
 const Navigation = () => {
   const router = useRouter();
@@ -34,14 +35,52 @@ const Navigation = () => {
             },
           }}
         >
-          <Typography variant="body2">
+          <Typography
+            sx={{
+              textDecoration: route === "/academy" ? "underline" : "none",
+
+              "&:hover": {
+                textDecoration: "underline",
+              },
+            }}
+            variant="body2"
+          >
             <Link href="/about">About Us </Link>
           </Typography>
-          <Typography variant="body2">
+          <Typography
+            sx={{
+              textDecoration: route === "/academy" ? "underline" : "none",
+
+              "&:hover": {
+                textDecoration: "underline",
+              },
+            }}
+            variant="body2"
+          >
             <Link href="/about">Portfolio </Link>
           </Typography>
-          <Typography variant="body2">
-            <Link href="/academy">Academy </Link>
+          <Typography
+            sx={{
+              textDecoration: route === "/academy" ? "underline" : "none",
+
+              "&:hover": {
+                textDecoration: "underline",
+              },
+            }}
+            variant="body2"
+          >
+            <Link href="/academy">
+              <div
+                style={{
+                  alignItems: "center",
+                  cursor: "pointer",
+                  display: "flex",
+                  justifyContent: "space-between",
+                }}
+              >
+                Academy <SchoolIcon sx={{ ml: 1 }} />
+              </div>
+            </Link>
           </Typography>
         </Box>
 

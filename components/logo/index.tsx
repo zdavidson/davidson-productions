@@ -11,8 +11,10 @@ const Logo = () => {
       sx={{
         alignItems: "center",
         display: "flex",
+
         "&:hover": {
           cursor: "pointer",
+          textDecoration: "underline",
         },
       }}
     >
