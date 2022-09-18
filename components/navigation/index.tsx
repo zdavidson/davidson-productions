@@ -37,7 +37,7 @@ const Navigation = () => {
         >
           <Typography
             sx={{
-              textDecoration: route === "/academy" ? "underline" : "none",
+              textDecoration: route === "/about" ? "underline" : "none",
 
               "&:hover": {
                 textDecoration: "underline",
@@ -49,7 +49,7 @@ const Navigation = () => {
           </Typography>
           <Typography
             sx={{
-              textDecoration: route === "/academy" ? "underline" : "none",
+              textDecoration: route === "/portfolio" ? "underline" : "none",
 
               "&:hover": {
                 textDecoration: "underline",
@@ -61,6 +61,10 @@ const Navigation = () => {
           </Typography>
           <Typography
             sx={{
+              alignItems: "center",
+              cursor: "pointer",
+              display: "flex",
+              justifyContent: "space-between",
               textDecoration: route === "/academy" ? "underline" : "none",
 
               "&:hover": {
@@ -69,18 +73,8 @@ const Navigation = () => {
             }}
             variant="body2"
           >
-            <Link href="/academy">
-              <div
-                style={{
-                  alignItems: "center",
-                  cursor: "pointer",
-                  display: "flex",
-                  justifyContent: "space-between",
-                }}
-              >
-                Academy <SchoolIcon sx={{ ml: 1 }} />
-              </div>
-            </Link>
+            <Link href="/academy">Academy </Link>
+            <SchoolIcon sx={{ ml: 1 }} />
           </Typography>
         </Box>
 
