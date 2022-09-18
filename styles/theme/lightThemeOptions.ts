@@ -11,16 +11,22 @@ const lightThemeOptions: ThemeOptions = {
       fontWeight: 400,
     },
     h2: {
-      fontSize: 80,
+      "@media (min-width:600px)": {
+        fontSize: 80,
+      },
       fontWeight: 600,
       letterSpacing: -3,
     },
     body1: {
-      fontSize: 20,
+      "@media (min-width:600px)": {
+        fontSize: 20,
+      },
       lineHeight: 1.65,
     },
     body2: {
-      fontSize: 20,
+      "@media (min-width:600px)": {
+        fontSize: 20,
+      },
       fontWeight: 600,
     },
   },

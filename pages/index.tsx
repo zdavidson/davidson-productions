@@ -38,14 +38,43 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Box sx={{ mt: 5, mx: 12 }}>
+      <Box
+        sx={{
+          mt: 5,
+
+          "@media (min-width:600px)": {
+            mx: 12,
+          },
+        }}
+      >
         <Navigation />
-        <Box sx={{ display: "flex", justifyContent: "space-between", my: 18 }}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            my: 18,
+          }}
+        >
           <Box>
-            <Typography variant="h2">
+            <Typography
+              sx={{
+                "@media (max-width:600px)": {
+                  width: "150vw",
+                },
+              }}
+              variant="h2"
+            >
               Develop your site.<br></br>Your way.
             </Typography>
-            <Box sx={{ ml: 2, mt: 4, width: 550 }}>
+            <Box
+              sx={{
+                ml: 2,
+                mt: 4,
+                "@media (min-width:600px)": {
+                  width: "38vw",
+                },
+              }}
+            >
               <Typography>
                 Work with our team of world-class designers, developers, and
                 content creators to develop or improve your business’s web

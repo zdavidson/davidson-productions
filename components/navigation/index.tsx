@@ -13,7 +13,7 @@ const Navigation = () => {
           display: "flex",
           color: "#FFF",
           justifyContent: "space-between",
-          width: 550,
+          width: "38vw",
         }}
       >
         <Box
@@ -22,7 +22,7 @@ const Navigation = () => {
             display: "flex",
             justifyContent: "space-between",
             mr: 0,
-            width: 350,
+            width: "36vw",
           }}
         >
           <Typography variant="body2">About Us</Typography>
