@@ -49,7 +49,7 @@ const Navigation = () => {
           onClick={
             route.startsWith("/academy")
               ? () => router.push("/academy/contact")
-              : null
+              : () => router.push("/about/contact")
           }
           sx={{
             "@media (max-width:600px)": {
