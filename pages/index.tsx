@@ -1,4 +1,10 @@
-import { Box, FormControl, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  FormControl,
+  TextField,
+  Typography,
+} from "@mui/material";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Button from "../components/button";
@@ -37,91 +43,92 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <Box
-        sx={{
-          mt: 5,
-
-          "@media (min-width:600px)": {
-            mx: 12,
-          },
-        }}
-      >
-        <Navigation />
+      <Container maxWidth="xl">
         <Box
           sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            my: 18,
+            mt: 5,
+
+            "@media (min-width:600px)": {
+              mx: 12,
+            },
           }}
         >
-          <Box>
-            <Typography
-              sx={{
-                "@media (max-width:600px)": {
-                  width: "90vw",
-                },
-              }}
-              variant="h2"
-            >
-              Develop your site.<br></br>Your way.
-            </Typography>
-            <Box
-              sx={{
-                mt: 4,
-                "@media (min-width:600px)": {
-                  ml: 2,
-                  width: "38vw",
-                },
-              }}
-            >
-              <Typography>
-                Work with our team of world-class designers, developers, and
-                content creators to develop or improve your business’s web
-                presence.
-              </Typography>
-            </Box>
-            <FormControl>
-              <Box
-                component="form"
-                onSubmit={(e: FormEvent<HTMLDivElement>) => handleSubmit(e)}
+          <Navigation />
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              my: 18,
+            }}
+          >
+            <Box>
+              <Typography
                 sx={{
-                  display: "flex",
+                  "@media (max-width:600px)": {
+                    width: "90vw",
+                  },
+                }}
+                variant="h2"
+              >
+                Develop your site.<br></br>Your way.
+              </Typography>
+              <Box
+                sx={{
+                  mt: 4,
                   "@media (min-width:600px)": {
                     ml: 2,
+                    width: "38vw",
                   },
-                  mt: 6,
                 }}
               >
-                <Button sx={{ mr: 4 }} type="submit">
-                  <Typography
-                    sx={{ alignItems: "center", display: "flex" }}
-                    variant="body2"
-                  >
-                    Request a free consult{" "}
-                    <ArrowRightAltIcon sx={{ fontSize: "large", ml: 1 }} />
-                  </Typography>
-                </Button>
-                <TextField
-                  id="email"
-                  name="email"
-                  placeholder="Your email address..."
-                  sx={{ borderRadius: 2 }}
-                  required
-                />
+                <Typography>
+                  Work with our team of world-class designers, developers, and
+                  content creators to develop or improve your business’s web
+                  presence.
+                </Typography>
               </Box>
-            </FormControl>
-          </Box>
-          <Box>
-            <Image
-              alt="user-with-laptop"
-              src="/laptop.jpg"
-              height={521}
-              width={400}
-            />
+              <FormControl>
+                <Box
+                  component="form"
+                  onSubmit={(e: FormEvent<HTMLDivElement>) => handleSubmit(e)}
+                  sx={{
+                    display: "flex",
+                    "@media (min-width:600px)": {
+                      ml: 2,
+                    },
+                    mt: 6,
+                  }}
+                >
+                  <Button sx={{ mr: 4 }} type="submit">
+                    <Typography
+                      sx={{ alignItems: "center", display: "flex" }}
+                      variant="body2"
+                    >
+                      Request a free consult{" "}
+                      <ArrowRightAltIcon sx={{ fontSize: "large", ml: 1 }} />
+                    </Typography>
+                  </Button>
+                  <TextField
+                    id="email"
+                    name="email"
+                    placeholder="Your email address..."
+                    sx={{ borderRadius: 2 }}
+                    required
+                  />
+                </Box>
+              </FormControl>
+            </Box>
+            <Box>
+              <Image
+                alt="user-with-laptop"
+                src="/laptop.jpg"
+                height={521}
+                width={400}
+              />
+            </Box>
           </Box>
         </Box>
-      </Box>
+      </Container>
     </div>
   );
 };
