@@ -4,11 +4,12 @@ import { COLORS } from "../../styles/theme/lightThemeOptions";
 
 interface Props {
   children: React.ReactNode;
+  onClick?: any;
   sx?: SxProps;
   type?: "button" | "submit" | "reset" | undefined;
 }
 
-const Button = ({ children, sx, type }: Props) => {
+const Button = ({ children, onClick, sx, type }: Props) => {
   return (
     <MuiButton
       sx={{
@@ -22,7 +23,13 @@ const Button = ({ children, sx, type }: Props) => {
         px: 2,
         textTransform: "none",
         ...sx,
+
+        "&:hover": {
+          color: COLORS.primary.black,
+          backgroundColor: "#FFF",
+        },
       }}
+      onClick={onClick}
       type={type}
     >
       {children}

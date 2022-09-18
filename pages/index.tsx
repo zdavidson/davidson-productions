@@ -2,6 +2,7 @@ import {
   Box,
   Container,
   FormControl,
+  Snackbar,
   TextField,
   Typography,
 } from "@mui/material";
@@ -14,8 +15,11 @@ import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import Image from "next/image";
 import { BaseSyntheticEvent, FormEvent } from "react";
 import { send } from "emailjs-com";
+import React from "react";
 
 const Home: NextPage = () => {
+  const [open, setOpen] = React.useState(false);
+
   const handleSubmit = async (e: BaseSyntheticEvent) => {
     e.preventDefault();
 
@@ -27,10 +31,22 @@ const Home: NextPage = () => {
     )
       .then((response) => {
         console.log("SUCCESS!", response.status, response.text);
+        setOpen(true);
       })
       .catch((err) => {
         console.log("FAILED...", err);
       });
+  };
+
+  const handleClose = (
+    event: React.SyntheticEvent | Event,
+    reason?: string
+  ) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
   };
 
   return (
@@ -41,7 +57,7 @@ const Home: NextPage = () => {
           name="description"
           content="Davidson Programming. A full stack web development company."
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/web-programming.png" />
       </Head>
       <Container maxWidth="xl">
         <Box
@@ -96,12 +112,25 @@ const Home: NextPage = () => {
                     "@media (min-width:600px)": {
                       ml: 2,
                     },
+                    "@media (max-width:600px)": {
+                      alignItems: "flex-start",
+                      display: "flex",
+                      flexDirection: "column",
+                    },
                     mt: 6,
                   }}
                 >
-                  <Button sx={{ mr: 4 }} type="submit">
+                  <Button
+                    sx={{
+                      mr: 4,
+                    }}
+                    type="submit"
+                  >
                     <Typography
-                      sx={{ alignItems: "center", display: "flex" }}
+                      sx={{
+                        alignItems: "center",
+                        display: "flex",
+                      }}
                       variant="body2"
                     >
                       Request a free consult{" "}
@@ -112,13 +141,30 @@ const Home: NextPage = () => {
                     id="email"
                     name="email"
                     placeholder="Your email address..."
-                    sx={{ borderRadius: 2 }}
+                    sx={{
+                      borderRadius: 2,
+                      "@media (max-width:600px)": {
+                        mt: 2,
+                      },
+                    }}
                     required
                   />
                 </Box>
+                <Snackbar
+                  open={open}
+                  autoHideDuration={6000}
+                  onClose={handleClose}
+                  message="Sent!"
+                />
               </FormControl>
             </Box>
-            <Box>
+            <Box
+              sx={{
+                "@media (max-width:600px)": {
+                  display: "none",
+                },
+              }}
+            >
               <Image
                 alt="user-with-laptop"
                 src="/laptop.jpg"
