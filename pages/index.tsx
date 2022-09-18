@@ -38,17 +38,6 @@ const Home: NextPage = () => {
       });
   };
 
-  const handleClose = (
-    event: React.SyntheticEvent | Event,
-    reason?: string
-  ) => {
-    if (reason === "clickaway") {
-      return;
-    }
-
-    setOpen(false);
-  };
-
   return (
     <div className={styles.container}>
       <Head>
@@ -150,12 +139,7 @@ const Home: NextPage = () => {
                     required
                   />
                 </Box>
-                <Snackbar
-                  open={open}
-                  autoHideDuration={6000}
-                  onClose={handleClose}
-                  message="Sent!"
-                />
+                <Snackbar open={open} autoHideDuration={4000} message="Sent!" />
               </FormControl>
             </Box>
             <Box
