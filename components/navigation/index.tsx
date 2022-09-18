@@ -11,6 +11,7 @@ const Navigation = () => {
         sx={{
           alignItems: "center",
           display: "flex",
+          color: "#FFF",
           justifyContent: "space-between",
           width: 550,
         }}
@@ -28,6 +29,7 @@ const Navigation = () => {
           <Typography variant="body2">Portfolio</Typography>
           <Typography variant="body2">Academy</Typography>
         </Box>
+        {/*         
         <Button>
           <Typography
             sx={{ alignItems: "center", display: "flex" }}
@@ -35,7 +37,7 @@ const Navigation = () => {
           >
             Contact Us <ArrowRightAltIcon />
           </Typography>
-        </Button>
+        </Button> */}
       </Box>
     </Box>
   );

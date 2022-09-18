@@ -7,11 +7,24 @@ import styles from "../styles/Home.module.css";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import Image from "next/image";
 import { BaseSyntheticEvent, FormEvent } from "react";
+import { send } from "emailjs-com";
 
 const Home: NextPage = () => {
   const handleSubmit = async (e: BaseSyntheticEvent) => {
     e.preventDefault();
-    console.log(e.target.email.value);
+
+    send(
+      process.env.NEXT_PUBLIC_SERVICE_ID!,
+      process.env.NEXT_PUBLIC_TEMPLATE_ID!,
+      { message: e.target.email.value },
+      process.env.NEXT_PUBLIC_USER_ID!
+    )
+      .then((response) => {
+        console.log("SUCCESS!", response.status, response.text);
+      })
+      .catch((err) => {
+        console.log("FAILED...", err);
+      });
   };
 
   return (
