@@ -59,7 +59,7 @@ const Home: NextPage = () => {
             <Typography
               sx={{
                 "@media (max-width:600px)": {
-                  width: "150vw",
+                  width: "90vw",
                 },
               }}
               variant="h2"
@@ -68,9 +68,9 @@ const Home: NextPage = () => {
             </Typography>
             <Box
               sx={{
-                ml: 2,
                 mt: 4,
                 "@media (min-width:600px)": {
+                  ml: 2,
                   width: "38vw",
                 },
               }}
@@ -87,7 +87,9 @@ const Home: NextPage = () => {
                 onSubmit={(e: FormEvent<HTMLDivElement>) => handleSubmit(e)}
                 sx={{
                   display: "flex",
-                  ml: 2,
+                  "@media (min-width:600px)": {
+                    ml: 2,
+                  },
                   mt: 6,
                 }}
               >
