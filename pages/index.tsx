@@ -107,6 +107,7 @@ const Home: NextPage = () => {
                   name="email"
                   placeholder="Your email address..."
                   sx={{ borderRadius: 2 }}
+                  required
                 />
               </Box>
             </FormControl>
