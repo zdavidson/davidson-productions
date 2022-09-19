@@ -10,7 +10,6 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Button from "../components/button";
 import Navigation from "../components/navigation";
-import styles from "../styles/Home.module.css";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import Image from "next/image";
 import { BaseSyntheticEvent, FormEvent } from "react";
@@ -47,6 +46,9 @@ const Home: NextPage = () => {
           name="description"
           content="Davidson Programming. A full stack web development company."
         />
+        <meta name="robots" content="index, nofollow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charSet="UTF-8" />
         <link rel="icon" href="/web-programming.png" />
       </Head>
       <Container maxWidth="xl">

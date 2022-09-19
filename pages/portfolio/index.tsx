@@ -1,4 +1,5 @@
 import { Box, Container, Typography } from "@mui/material";
+import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Navigation from "../../components/navigation";
@@ -8,6 +9,17 @@ const About = () => {
   const router = useRouter();
   return (
     <>
+      <Head>
+        <title>Davidson Programming</title>
+        <meta
+          name="description"
+          content="Davidson Programming. A full stack web development company."
+        />
+        <meta name="robots" content="index, nofollow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charSet="UTF-8" />
+        <link rel="icon" href="/web-programming.png" />
+      </Head>
       <Container maxWidth="xl">
         <Box
           sx={{

@@ -13,6 +13,7 @@ import Image from "next/image";
 import { send } from "emailjs-com";
 import { COLORS } from "../../../styles/theme/lightThemeOptions";
 import React from "react";
+import Head from "next/head";
 
 const Contact = () => {
   const [open, setOpen] = React.useState(false);
@@ -41,6 +42,17 @@ const Contact = () => {
 
   return (
     <>
+      <Head>
+        <title>Davidson Programming</title>
+        <meta
+          name="description"
+          content="Davidson Programming. A full stack web development company."
+        />
+        <meta name="robots" content="index, nofollow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charSet="UTF-8" />
+        <link rel="icon" href="/web-programming.png" />
+      </Head>
       <Container maxWidth="xl">
         <Box
           sx={{

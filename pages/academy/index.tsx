@@ -6,12 +6,24 @@ import OutlinedButton from "../../components/outlined-button";
 import Image from "next/image";
 import { COLORS } from "../../styles/theme/lightThemeOptions";
 import Link from "next/link";
+import Head from "next/head";
 
 const Academy = () => {
   const router = useRouter();
 
   return (
     <>
+      <Head>
+        <title>Davidson Programming Academy</title>
+        <meta
+          name="description"
+          content="Davidson Programming Academy. A coding bootcamp alternative."
+        />
+        <meta name="robots" content="index, nofollow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charSet="UTF-8" />
+        <link rel="icon" href="/web-programming.png" />
+      </Head>
       <Container maxWidth="xl">
         <Box
           sx={{
