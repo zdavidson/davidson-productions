@@ -1,42 +1,116 @@
 import { Box, Container, Typography } from "@mui/material";
 import Navigation from "../../components/navigation";
+import Image from "next/image";
+import { COLORS } from "../../styles/theme/lightThemeOptions";
 
 const About = () => {
   return (
-    <Container maxWidth="xl">
-      <Box
-        sx={{
-          mt: 5,
-
-          "@media (min-width:600px)": {
-            mx: 12,
-          },
-        }}
-      >
-        <Navigation />
+    <>
+      <Container maxWidth="xl">
         <Box
           sx={{
-            display: "flex",
-            alignItems: "center",
-            flexDirection: "column",
-            justifyContent: "center",
-            my: 18,
+            mt: 5,
+
+            "@media (min-width:600px)": {
+              mx: 12,
+            },
           }}
         >
-          <Typography
-            align="center"
-            variant="h2"
+          <Navigation />
+          <Box
             sx={{
+              display: "flex",
+              justifyContent: "space-evenly",
+              my: 18,
               "@media (max-width:600px)": {
-                width: "90vw",
+                flexDirection: "column",
               },
             }}
           >
-            Coming Soon
-          </Typography>
+            <Box>
+              <Typography
+                sx={{
+                  ml: 2,
+                  "@media (max-width:600px)": {
+                    ml: 0,
+                    width: "90vw",
+                  },
+                }}
+                variant="h2"
+              >
+                About Us
+              </Typography>
+              <Box
+                sx={{
+                  mt: 4,
+                  "@media (min-width:600px)": {
+                    ml: 2,
+                    width: "38vw",
+                  },
+                }}
+              >
+                <Typography>
+                  Davidson Programming is a small but mighty team spearheaded by
+                  software engineer{" "}
+                  <a
+                    target="_blank"
+                    href="https://github.com/zdavidson"
+                    rel="noreferrer"
+                  >
+                    <span
+                      style={{
+                        cursor: "pointer",
+                        textDecoration: "underline",
+                      }}
+                    >
+                      Zoë Davidson
+                    </span>
+                    .
+                  </a>
+                </Typography>
+              </Box>
+            </Box>
+            <Box
+              sx={{
+                "@media (max-width:600px)": {
+                  mt: 6,
+                },
+              }}
+            >
+              <Image
+                alt="programmer"
+                src="/about-img.jpg"
+                height={521}
+                width={350}
+              />
+            </Box>
+          </Box>
         </Box>
+      </Container>
+      <Box
+        sx={{
+          alignItems: "center",
+          backgroundColor: COLORS.primary.black,
+          display: "flex",
+          height: "30vh",
+          width: "100%",
+        }}
+      >
+        <Container maxWidth="xl">
+          <Box
+            sx={{
+              mt: 5,
+
+              "@media (min-width:600px)": {
+                mx: 12,
+              },
+            }}
+          >
+            <Navigation color="white" />
+          </Box>
+        </Container>
       </Box>
-    </Container>
+    </>
   );
 };
 
