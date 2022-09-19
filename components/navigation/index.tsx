@@ -5,14 +5,20 @@ import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import SchoolIcon from "@mui/icons-material/School";
+import { inherits } from "util";
+import { COLORS } from "../../styles/theme/lightThemeOptions";
 
-const Navigation = () => {
+interface Props {
+  color?: string;
+}
+
+const Navigation = ({ color }: Props) => {
   const router = useRouter();
   const route = router.route;
 
   return (
     <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-      <Logo />
+      <Logo color={color} />
       <Box
         sx={{
           alignItems: "center",
@@ -37,6 +43,7 @@ const Navigation = () => {
         >
           <Typography
             sx={{
+              color: color ?? COLORS.primary.black,
               textDecoration: route === "/about" ? "underline" : "none",
 
               "&:hover": {
@@ -49,6 +56,7 @@ const Navigation = () => {
           </Typography>
           <Typography
             sx={{
+              color: color ?? COLORS.primary.black,
               textDecoration: route === "/portfolio" ? "underline" : "none",
 
               "&:hover": {
@@ -62,6 +70,7 @@ const Navigation = () => {
           <Typography
             sx={{
               alignItems: "center",
+              color: color ?? COLORS.primary.black,
               cursor: "pointer",
               display: "flex",
               justifyContent: "space-between",
@@ -79,6 +88,7 @@ const Navigation = () => {
         </Box>
 
         <Button
+          color={color}
           onClick={
             route.startsWith("/academy")
               ? () => router.push("/academy/contact")
@@ -92,7 +102,14 @@ const Navigation = () => {
           }}
         >
           <Typography
-            sx={{ alignItems: "center", display: "flex" }}
+            sx={{
+              alignItems: "center",
+              color: color ?? COLORS.primary.black,
+              display: "flex",
+              "&:hover": {
+                color: color ? COLORS.primary.black : "#FFF",
+              },
+            }}
             variant="body2"
           >
             {route.startsWith("/academy") ? "Enroll Now" : "Contact Us"}{" "}

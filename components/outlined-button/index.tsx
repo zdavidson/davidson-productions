@@ -4,17 +4,18 @@ import { COLORS } from "../../styles/theme/lightThemeOptions";
 
 interface Props {
   children: React.ReactNode;
+  color?: string;
   onClick?: any;
   type?: "button" | "submit" | "reset" | undefined;
   sx?: SxProps;
 }
 
-const Button = ({ children, onClick, type, sx }: Props) => {
+const Button = ({ children, color, onClick, type, sx }: Props) => {
   return (
     <MuiButton
       onClick={onClick}
       sx={{
-        border: `3px solid ${COLORS.primary.black}`,
+        border: `3px solid ${color ?? COLORS.primary.black}`,
         borderRadius: 2,
         color: COLORS.primary.black,
         m: 0,
@@ -25,8 +26,8 @@ const Button = ({ children, onClick, type, sx }: Props) => {
         ...sx,
 
         "&:hover": {
-          backgroundColor: COLORS.primary.black,
-          color: "#FFF",
+          backgroundColor: color ?? COLORS.primary.black,
+          color: color ? COLORS.primary.black : "#FFF",
         },
       }}
       type={type}

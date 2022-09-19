@@ -6,7 +6,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { BaseSyntheticEvent, FormEvent, useState } from "react";
+import { BaseSyntheticEvent, FormEvent } from "react";
 import Navigation from "../../../components/navigation";
 import Button from "../../../components/outlined-button";
 import Image from "next/image";
@@ -26,7 +26,7 @@ const Contact = () => {
       {
         name: e.target.name.value,
         project: e.target.project?.value,
-        message: e.target.email.value,
+        email: e.target.email.value,
       },
       process.env.NEXT_PUBLIC_USER_ID!
     )
