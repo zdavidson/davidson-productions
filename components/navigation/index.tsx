@@ -65,7 +65,7 @@ const Navigation = ({ color }: Props) => {
             }}
             variant="body2"
           >
-            <Link href="/about">Portfolio </Link>
+            <Link href="/portfolio">Portfolio </Link>
           </Typography>
           <Typography
             sx={{

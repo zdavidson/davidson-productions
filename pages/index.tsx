@@ -16,6 +16,7 @@ import Image from "next/image";
 import { BaseSyntheticEvent, FormEvent } from "react";
 import { send } from "emailjs-com";
 import React from "react";
+import { COLORS } from "../styles/theme/lightThemeOptions";
 
 const Home: NextPage = () => {
   const [open, setOpen] = React.useState(false);
@@ -39,127 +40,156 @@ const Home: NextPage = () => {
   };
 
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Davidson Programming</title>
-        <meta
-          name="description"
-          content="Davidson Programming. A full stack web development company."
-        />
-        <link rel="icon" href="/web-programming.png" />
-      </Head>
-      <Container maxWidth="xl">
-        <Box
-          sx={{
-            mt: 5,
-
-            "@media (min-width:600px)": {
-              mx: 12,
-            },
-          }}
-        >
-          <Navigation />
+    <>
+      <div className={styles.container}>
+        <Head>
+          <title>Davidson Programming</title>
+          <meta
+            name="description"
+            content="Davidson Programming. A full stack web development company."
+          />
+          <link rel="icon" href="/web-programming.png" />
+        </Head>
+        <Container maxWidth="xl">
           <Box
             sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              my: 18,
+              mt: 5,
+
+              "@media (min-width:600px)": {
+                mx: 12,
+              },
             }}
           >
-            <Box>
-              <Typography
-                sx={{
-                  "@media (max-width:600px)": {
-                    width: "90vw",
-                  },
-                }}
-                variant="h2"
-              >
-                Develop your site.<br></br>Your way.
-              </Typography>
-              <Box
-                sx={{
-                  mt: 4,
-                  "@media (min-width:600px)": {
-                    ml: 2,
-                    width: "38vw",
-                  },
-                }}
-              >
-                <Typography>
-                  Work with our team of world-class designers, developers, and
-                  content creators to develop or improve your business’s web
-                  presence.
-                </Typography>
-              </Box>
-              <FormControl>
-                <Box
-                  component="form"
-                  onSubmit={(e: FormEvent<HTMLDivElement>) => handleSubmit(e)}
-                  sx={{
-                    display: "flex",
-                    "@media (min-width:600px)": {
-                      ml: 2,
-                    },
-                    "@media (max-width:600px)": {
-                      alignItems: "flex-start",
-                      display: "flex",
-                      flexDirection: "column",
-                    },
-                    mt: 6,
-                  }}
-                >
-                  <Button
-                    sx={{
-                      mr: 4,
-                    }}
-                    type="submit"
-                  >
-                    <Typography
-                      sx={{
-                        alignItems: "center",
-                        display: "flex",
-                      }}
-                      variant="body2"
-                    >
-                      Request a free consult{" "}
-                      <ArrowRightAltIcon sx={{ fontSize: "large", ml: 1 }} />
-                    </Typography>
-                  </Button>
-                  <TextField
-                    id="email"
-                    name="email"
-                    placeholder="Your email address..."
-                    sx={{
-                      borderRadius: 2,
-                      "@media (max-width:600px)": {
-                        mt: 2,
-                      },
-                    }}
-                    required
-                  />
-                </Box>
-                <Snackbar open={open} autoHideDuration={4000} message="Sent!" />
-              </FormControl>
-            </Box>
+            <Navigation />
             <Box
               sx={{
-                "@media (max-width:600px)": {
-                  display: "none",
-                },
+                display: "flex",
+                justifyContent: "space-between",
+                my: 18,
               }}
             >
-              <Image
-                alt="user-with-laptop"
-                src="/laptop.jpg"
-                height={521}
-                width={400}
-              />
+              <Box>
+                <Typography
+                  sx={{
+                    "@media (max-width:600px)": {
+                      width: "90vw",
+                    },
+                  }}
+                  variant="h2"
+                >
+                  Develop your site.<br></br>Your way.
+                </Typography>
+                <Box
+                  sx={{
+                    mt: 4,
+                    "@media (min-width:600px)": {
+                      ml: 2,
+                      width: "38vw",
+                    },
+                  }}
+                >
+                  <Typography>
+                    Work with our team of world-class designers, developers, and
+                    content creators to develop or improve your business’s web
+                    presence.
+                  </Typography>
+                </Box>
+                <FormControl>
+                  <Box
+                    component="form"
+                    onSubmit={(e: FormEvent<HTMLDivElement>) => handleSubmit(e)}
+                    sx={{
+                      display: "flex",
+                      "@media (min-width:600px)": {
+                        ml: 2,
+                      },
+                      "@media (max-width:600px)": {
+                        alignItems: "flex-start",
+                        display: "flex",
+                        flexDirection: "column",
+                      },
+                      mt: 6,
+                    }}
+                  >
+                    <Button
+                      sx={{
+                        mr: 4,
+                      }}
+                      type="submit"
+                    >
+                      <Typography
+                        sx={{
+                          alignItems: "center",
+                          display: "flex",
+                        }}
+                        variant="body2"
+                      >
+                        Request a free consult{" "}
+                        <ArrowRightAltIcon sx={{ fontSize: "large", ml: 1 }} />
+                      </Typography>
+                    </Button>
+                    <TextField
+                      id="email"
+                      name="email"
+                      placeholder="Your email address..."
+                      sx={{
+                        borderRadius: 2,
+                        "@media (max-width:600px)": {
+                          mt: 2,
+                        },
+                      }}
+                      required
+                    />
+                  </Box>
+                  <Snackbar
+                    open={open}
+                    autoHideDuration={4000}
+                    message="Sent!"
+                  />
+                </FormControl>
+              </Box>
+              <Box
+                sx={{
+                  "@media (max-width:600px)": {
+                    display: "none",
+                  },
+                }}
+              >
+                <Image
+                  alt="user-with-laptop"
+                  src="/laptop.jpg"
+                  height={521}
+                  width={400}
+                />
+              </Box>
             </Box>
           </Box>
-        </Box>
-      </Container>
-    </div>
+        </Container>
+      </div>
+      <Box
+        sx={{
+          alignItems: "center",
+          backgroundColor: COLORS.primary.black,
+          display: "flex",
+          height: "30vh",
+          width: "100%",
+        }}
+      >
+        <Container maxWidth="xl">
+          <Box
+            sx={{
+              mt: 5,
+
+              "@media (min-width:600px)": {
+                mx: 12,
+              },
+            }}
+          >
+            <Navigation color="white" />
+          </Box>
+        </Container>
+      </Box>
+    </>
   );
 };
 

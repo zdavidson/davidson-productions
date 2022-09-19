@@ -40,127 +40,152 @@ const Contact = () => {
   };
 
   return (
-    <Container maxWidth="xl">
-      <Box
-        sx={{
-          mt: 5,
-
-          "@media (min-width:600px)": {
-            mx: 12,
-          },
-        }}
-      >
-        <Navigation />
-
+    <>
+      <Container maxWidth="xl">
         <Box
           sx={{
-            alignItems: "center",
-            display: "flex",
-            justifyContent: "space-between",
-            my: 12,
+            mt: 5,
+
+            "@media (min-width:600px)": {
+              mx: 12,
+            },
           }}
         >
-          <Box>
-            <Typography
-              sx={{
-                "@media (max-width:600px)": {
-                  width: "90vw",
-                },
-              }}
-              variant="h2"
-            >
-              Interested?<br></br>Let&apos;s Talk.
-            </Typography>
-            <FormControl>
-              <Box
-                component="form"
-                onSubmit={(e: FormEvent<HTMLDivElement>) => handleSubmit(e)}
-                sx={{
-                  alignItems: "center",
-                  display: "flex",
-                  "@media (min-width:600px)": {
-                    border: `1px solid ${COLORS.primary.black}`,
-                    borderRadius: 2,
-                    ml: 1,
-                    p: 5,
-                  },
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  mt: 6,
+          <Navigation />
 
-                  "@media (max-width:600px)": {
-                    alignItems: "flex-start",
-                  },
-                }}
-              >
-                <Box>
-                  <TextField
-                    id="name"
-                    label="Name"
-                    name="name"
-                    sx={{ borderRadius: 2, m: 1 }}
-                    required
-                  />
-                  <TextField
-                    id="pronouns"
-                    label="Pronouns"
-                    name="pronouns"
-                    sx={{ borderRadius: 2, m: 1 }}
-                  />
-                </Box>
-                <TextField
-                  id="email"
-                  label="Email"
-                  name="email"
-                  sx={{
-                    borderRadius: 2,
-                    m: 1,
-                    width: 250,
-                  }}
-                  required
-                />
-
-                <Button
-                  sx={{
-                    mt: 2,
-                    "@media (max-width:600px)": {
-                      ml: 1,
-                    },
-                  }}
-                  type="submit"
-                >
-                  <Typography
-                    sx={{
-                      alignItems: "center",
-                      display: "flex",
-                      m: 1,
-                    }}
-                    variant="body2"
-                  >
-                    Submit
-                  </Typography>
-                </Button>
-              </Box>
-            </FormControl>
-            <Snackbar open={open} autoHideDuration={4000} message="Sent!" />
-          </Box>
           <Box
             sx={{
-              "@media (max-width:600px)": {
-                display: "none",
+              alignItems: "center",
+              display: "flex",
+              justifyContent: "space-between",
+              my: 12,
+            }}
+          >
+            <Box>
+              <Typography
+                sx={{
+                  "@media (max-width:600px)": {
+                    width: "90vw",
+                  },
+                }}
+                variant="h2"
+              >
+                Interested?<br></br>Let&apos;s Talk.
+              </Typography>
+              <FormControl>
+                <Box
+                  component="form"
+                  onSubmit={(e: FormEvent<HTMLDivElement>) => handleSubmit(e)}
+                  sx={{
+                    alignItems: "center",
+                    display: "flex",
+                    "@media (min-width:600px)": {
+                      border: `1px solid ${COLORS.primary.black}`,
+                      borderRadius: 2,
+                      ml: 1,
+                      p: 5,
+                    },
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    mt: 6,
+
+                    "@media (max-width:600px)": {
+                      alignItems: "flex-start",
+                    },
+                  }}
+                >
+                  <Box>
+                    <TextField
+                      id="name"
+                      label="Name"
+                      name="name"
+                      sx={{ borderRadius: 2, m: 1 }}
+                      required
+                    />
+                    <TextField
+                      id="pronouns"
+                      label="Pronouns"
+                      name="pronouns"
+                      sx={{ borderRadius: 2, m: 1 }}
+                    />
+                  </Box>
+                  <TextField
+                    id="email"
+                    label="Email"
+                    name="email"
+                    sx={{
+                      borderRadius: 2,
+                      m: 1,
+                      width: 250,
+                    }}
+                    required
+                  />
+
+                  <Button
+                    sx={{
+                      mt: 2,
+                      "@media (max-width:600px)": {
+                        ml: 1,
+                      },
+                    }}
+                    type="submit"
+                  >
+                    <Typography
+                      sx={{
+                        alignItems: "center",
+                        display: "flex",
+                        m: 1,
+                      }}
+                      variant="body2"
+                    >
+                      Submit
+                    </Typography>
+                  </Button>
+                </Box>
+              </FormControl>
+              <Snackbar open={open} autoHideDuration={4000} message="Sent!" />
+            </Box>
+            <Box
+              sx={{
+                "@media (max-width:600px)": {
+                  display: "none",
+                },
+              }}
+            >
+              <Image
+                alt="user-with-laptop"
+                src="/laptop.jpg"
+                height={521}
+                width={400}
+              />
+            </Box>
+          </Box>
+        </Box>
+      </Container>
+      <Box
+        sx={{
+          alignItems: "center",
+          backgroundColor: COLORS.primary.black,
+          display: "flex",
+          height: "30vh",
+          width: "100%",
+        }}
+      >
+        <Container maxWidth="xl">
+          <Box
+            sx={{
+              mt: 5,
+
+              "@media (min-width:600px)": {
+                mx: 12,
               },
             }}
           >
-            <Image
-              alt="user-with-laptop"
-              src="/laptop.jpg"
-              height={521}
-              width={400}
-            />
+            <Navigation color="white" />
           </Box>
-        </Box>
+        </Container>
       </Box>
-    </Container>
+    </>
   );
 };
 
