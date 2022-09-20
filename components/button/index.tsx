@@ -16,7 +16,7 @@ const Button = ({ children, onClick, sx, type }: Props) => {
         border: `3px solid ${COLORS.primary.black}`,
         borderRadius: 2,
         backgroundColor: COLORS.primary.black,
-        color: "#FFF",
+        color: COLORS.primary.white,
         m: 0,
         p: 0,
         py: 1,
@@ -26,7 +26,7 @@ const Button = ({ children, onClick, sx, type }: Props) => {
 
         "&:hover": {
           color: COLORS.primary.black,
-          backgroundColor: "#FFF",
+          backgroundColor: COLORS.primary.white,
         },
       }}
       onClick={onClick}

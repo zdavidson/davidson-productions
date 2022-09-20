@@ -26,8 +26,8 @@ const Button = ({ children, color, onClick, type, sx }: Props) => {
         ...sx,
 
         "&:hover": {
-          backgroundColor: color ?? COLORS.primary.black,
-          color: color ? COLORS.primary.black : "#FFF",
+          backgroundColor: color ? COLORS.primary.white : COLORS.primary.black,
+          color: color ? COLORS.primary.black : COLORS.primary.white,
         },
       }}
       type={type}

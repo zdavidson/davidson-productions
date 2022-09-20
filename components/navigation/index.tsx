@@ -107,7 +107,7 @@ const Navigation = ({ color }: Props) => {
               color: color ?? COLORS.primary.black,
               display: "flex",
               "&:hover": {
-                color: color ? COLORS.primary.black : "#FFF",
+                color: color ? COLORS.primary.black : COLORS.primary.white,
               },
             }}
             variant="body2"
