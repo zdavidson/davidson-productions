@@ -70,8 +70,12 @@ const Academy = () => {
               </Typography>
             </Box>
             <Box sx={{ mt: 6 }}>
-              <Button onClick={() => router.push("/academy/contact")}>
-                <Typography variant="body2">Get Started</Typography>
+              <Button
+                onClick={() =>
+                  router.push("https://zoedavidson.gumroad.com/l/bootcamp")
+                }
+              >
+                <Typography variant="body2">Enroll Now</Typography>
               </Button>
               <OutlinedButton
                 onClick={() =>
@@ -146,8 +150,12 @@ const Academy = () => {
                   Training<br></br> Community<br></br> 14-Day Trial*
                 </Typography>
                 <Box sx={{ display: "flex", justifyContent: "center", mt: 6 }}>
-                  <Button onClick={() => router.push("/academy/contact")}>
-                    <Typography variant="body2">Get Started</Typography>
+                  <Button
+                    onClick={() =>
+                      router.push("https://zoedavidson.gumroad.com/l/bootcamp")
+                    }
+                  >
+                    <Typography variant="body2">Enroll Now</Typography>
                   </Button>
                   <OutlinedButton
                     onClick={() =>
@@ -222,10 +230,28 @@ const Academy = () => {
                   >
                     Money Back Guarantee*
                   </span>
+                  <br></br>
+                  <span style={{ fontWeight: 400 }}>Total Cost: $1500 </span>
                 </Typography>
-                <Typography align="right" sx={{ mt: 4 }}>
-                  Total Cost: $1500{" "}
-                </Typography>
+              </Box>
+              <Box sx={{ display: "flex", justifyContent: "center", mt: 6 }}>
+                <Button
+                  onClick={() =>
+                    router.push("https://zoedavidson.gumroad.com/l/bootcamp")
+                  }
+                >
+                  <Typography variant="body2">Enroll Now</Typography>
+                </Button>
+                <OutlinedButton
+                  onClick={() =>
+                    scroll({ top: 2600, left: 0, behavior: "smooth" })
+                  }
+                  sx={{ ml: 4, py: 1, px: 2 }}
+                >
+                  <Typography id="the-course" variant="body2">
+                    Learn More
+                  </Typography>
+                </OutlinedButton>
               </Box>
             </Box>
             <Box
@@ -283,12 +309,23 @@ const Academy = () => {
               <br></br> You can also try our program free for 14-days. What’s
               there to lose?
             </Typography>
-            <Button
-              onClick={() => router.push("/academy/contact")}
-              sx={{ mt: 6 }}
-            >
-              <Typography variant="body2">Enroll Now</Typography>
-            </Button>
+            <Box sx={{ display: "flex", justifyContent: "center", mt: 6 }}>
+              <Button
+                onClick={() =>
+                  router.push("https://zoedavidson.gumroad.com/l/bootcamp")
+                }
+              >
+                <Typography variant="body2">Enroll Now</Typography>
+              </Button>
+              <OutlinedButton
+                onClick={() => router.push("/academy/contact")}
+                sx={{ ml: 4, py: 1, px: 2 }}
+              >
+                <Typography id="the-course" variant="body2">
+                  Contact Us
+                </Typography>
+              </OutlinedButton>
+            </Box>
           </Box>
         </Box>
       </Container>

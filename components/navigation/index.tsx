@@ -5,7 +5,6 @@ import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import SchoolIcon from "@mui/icons-material/School";
-import { inherits } from "util";
 import { COLORS } from "../../styles/theme/lightThemeOptions";
 
 interface Props {
@@ -24,7 +23,7 @@ const Navigation = ({ color }: Props) => {
           alignItems: "center",
           display: "flex",
           justifyContent: "space-between",
-          width: "38vw",
+          width: route.startsWith("/academy") ? "42vw" : "38vw",
         }}
       >
         <Box
@@ -32,12 +31,15 @@ const Navigation = ({ color }: Props) => {
             alignItems: "center",
             display: "flex",
             justifyContent: "space-between",
-            mr: 0,
-            width: "25vw",
+            mr: route.startsWith("/academy") ? 2 : 0,
+            width: route.startsWith("/academy") ? "30vw" : "25vw",
 
             "@media (max-width:600px)": {
+              alignItems: "flex-end",
               display: "flex",
               flexDirection: "column",
+              mr: 0,
+              width: "30vw",
             },
           }}
         >
@@ -67,6 +69,23 @@ const Navigation = ({ color }: Props) => {
           >
             <Link href="/portfolio">Portfolio </Link>
           </Typography>
+          {route.startsWith("/academy") ? (
+            <Typography
+              sx={{
+                color: color ?? COLORS.primary.black,
+                mx: 1,
+                textDecoration:
+                  route === "/academy/contact" ? "underline" : "none",
+
+                "&:hover": {
+                  textDecoration: "underline",
+                },
+              }}
+              variant="body2"
+            >
+              <Link href="/academy/contact">Contact </Link>
+            </Typography>
+          ) : null}
           <Typography
             sx={{
               alignItems: "center",
@@ -91,7 +110,7 @@ const Navigation = ({ color }: Props) => {
           color={color}
           onClick={
             route.startsWith("/academy")
-              ? () => router.push("/academy/contact")
+              ? () => router.push("https://zoedavidson.gumroad.com/l/bootcamp")
               : () => router.push("/about/contact")
           }
           sx={{
