@@ -1,15 +1,33 @@
-import { Box, Container, Divider, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Divider,
+  styled,
+  Tooltip,
+  Typography,
+} from "@mui/material";
 import { useRouter } from "next/router";
 import Button from "../../components/button";
 import Navigation from "../../components/navigation";
 import OutlinedButton from "../../components/outlined-button";
 import Image from "next/image";
 import { COLORS } from "../../styles/theme/lightThemeOptions";
-import Link from "next/link";
+import { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
 import Head from "next/head";
 
 const Academy = () => {
   const router = useRouter();
+
+  const StyledTooltip = styled(({ className, ...props }: TooltipProps) => (
+    <Tooltip {...props} classes={{ popper: className }} />
+  ))(() => ({
+    [`& .${tooltipClasses.tooltip}`]: {
+      backgroundColor: COLORS.primary.black,
+      border: "2px solid black",
+      color: COLORS.primary.white,
+      fontSize: 16,
+    },
+  }));
 
   return (
     <>
@@ -146,8 +164,47 @@ const Academy = () => {
                   sx={{ mt: 2, lineHeight: 2 }}
                   variant="body2"
                 >
-                  1-1 Mentors<br></br> In-depth classes<br></br> Interview
-                  Training<br></br> Community<br></br> 14-Day Trial*
+                  <StyledTooltip
+                    title="Each student receives bi-weekly meetings with their mentor"
+                    placement="top-end"
+                  >
+                    <span>1-1 Mentors</span>
+                  </StyledTooltip>
+                  <br></br>{" "}
+                  <StyledTooltip
+                    title="Students will be get hands on experience with coding in class"
+                    placement="top-end"
+                  >
+                    <span>In-depth classes</span>
+                  </StyledTooltip>
+                  <br></br>
+                  <StyledTooltip
+                    title="Students will be guided through interview prep as well as multiple mock interview sessions"
+                    placement="top-end"
+                  >
+                    <span>Interview Training</span>
+                  </StyledTooltip>
+                  <br></br>{" "}
+                  <StyledTooltip
+                    title="Each cohort with be able to communicate and work through problems as a group, as well as join the larger Davidson Programming community"
+                    placement="top-end"
+                  >
+                    <span>Community</span>
+                  </StyledTooltip>
+                  <br></br>
+                  <StyledTooltip
+                    title="Each 90-day session has a limited number of seats to ensure that students get individual attention and personalized recommendations"
+                    placement="top-end"
+                  >
+                    <span>Limited Enrollment</span>
+                  </StyledTooltip>
+                  <br></br>{" "}
+                  <StyledTooltip
+                    title="Try us out for 14 days and see if it's a good fit. Scroll down for more details."
+                    placement="top-end"
+                  >
+                    <span>14-Day Trial*</span>
+                  </StyledTooltip>
                 </Typography>
                 <Box sx={{ display: "flex", justifyContent: "center", mt: 6 }}>
                   <Button
@@ -203,9 +260,9 @@ const Academy = () => {
                 }}
               >
                 <Typography align="center">
-                  Our program costs only a tenth of what the average US coding
-                  bootcamp costs. Why? We’re not here to make a profit, we’re
-                  here to make you succeed in your career.
+                  Our program costs $1500, which is only a tenth of what the
+                  average US coding bootcamp costs. Why? We’re not here to make
+                  a profit, we’re here to make you succeed in your career.
                 </Typography>
                 <Typography align="left" sx={{ mt: 4 }}>
                   This includes:
@@ -217,7 +274,7 @@ const Academy = () => {
                 >
                   Bi-Weekly Meetings with your mentor<br></br>
                   Frontend certificate<br></br>
-                  Porfolio with 3 projects<br></br>
+                  Porfolio with <i>at least</i> 3 projects<br></br>
                   Lifetime community access<br></br>
                   <span
                     onClick={() =>
@@ -230,8 +287,6 @@ const Academy = () => {
                   >
                     Money Back Guarantee*
                   </span>
-                  <br></br>
-                  <span style={{ fontWeight: 400 }}>Total Cost: $1500 </span>
                 </Typography>
               </Box>
               <Box sx={{ display: "flex", justifyContent: "center", mt: 6 }}>
@@ -256,6 +311,7 @@ const Academy = () => {
             </Box>
             <Box
               sx={{
+                display: "flex",
                 "@media (max-width:600px)": {
                   display: "none",
                 },
