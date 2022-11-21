@@ -85,6 +85,8 @@ const Academy = () => {
               <Typography align="center">
                 At Davidson Programming Academy, you’ll learn how to become a
                 top-class developer and land a job in the tech industry.
+                <br></br>
+                <br></br> <b>Next cohort begins: January 9th, 2023</b>
               </Typography>
             </Box>
             <Box sx={{ mt: 6 }}>
@@ -97,7 +99,7 @@ const Academy = () => {
               </Button>
               <OutlinedButton
                 onClick={() =>
-                  scroll({ top: 800, left: 0, behavior: "smooth" })
+                  scroll({ top: 900, left: 0, behavior: "smooth" })
                 }
                 sx={{ ml: 4, py: 1, px: 2 }}
               >
@@ -216,7 +218,7 @@ const Academy = () => {
                   </Button>
                   <OutlinedButton
                     onClick={() =>
-                      scroll({ top: 1700, left: 0, behavior: "smooth" })
+                      scroll({ top: 1800, left: 0, behavior: "smooth" })
                     }
                     sx={{ ml: 4, py: 1, px: 2 }}
                   >
@@ -278,7 +280,7 @@ const Academy = () => {
                   Lifetime community access<br></br>
                   <span
                     onClick={() =>
-                      scroll({ top: 2400, left: 0, behavior: "smooth" })
+                      scroll({ top: 2500, left: 0, behavior: "smooth" })
                     }
                     style={{
                       cursor: "pointer",
@@ -299,7 +301,7 @@ const Academy = () => {
                 </Button>
                 <OutlinedButton
                   onClick={() =>
-                    scroll({ top: 2600, left: 0, behavior: "smooth" })
+                    scroll({ top: 2700, left: 0, behavior: "smooth" })
                   }
                   sx={{ ml: 4, py: 1, px: 2 }}
                 >
