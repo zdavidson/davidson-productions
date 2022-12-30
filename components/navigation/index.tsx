@@ -101,7 +101,13 @@ const Navigation = ({ color }: Props) => {
             }}
             variant="body2"
           >
-            <Link href="/academy">Academy </Link>
+            <a
+              href="https://davidson-programming-academy.thinkific.com/courses/front-end-developer"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Academy
+            </a>
             <SchoolIcon sx={{ ml: 1 }} />
           </Typography>
         </Box>
