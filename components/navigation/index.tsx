@@ -101,9 +101,7 @@ const Navigation = ({ color }: Props) => {
             }}
             variant="body2"
           >
-            <Link href="https://davidson-programming-academy.thinkific.com/courses/front-end-developer">
-              Academy
-            </Link>
+            <Link href="/academy">Academy</Link>
             <SchoolIcon sx={{ ml: 1 }} />
           </Typography>
         </Box>
@@ -112,7 +110,10 @@ const Navigation = ({ color }: Props) => {
           color={color}
           onClick={
             route.startsWith("/academy")
-              ? () => router.push("https://zoedavidson.gumroad.com/l/bootcamp")
+              ? () =>
+                  router.push(
+                    "https://davidson-programming-academy.thinkific.com/courses/front-end-developer"
+                  )
               : () => router.push("/about/contact")
           }
           sx={{
