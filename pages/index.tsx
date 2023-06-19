@@ -16,6 +16,7 @@ import { BaseSyntheticEvent, FormEvent } from "react";
 import { send } from "emailjs-com";
 import React from "react";
 import { COLORS } from "../styles/theme/lightThemeOptions";
+import Script from "next/script";
 
 const Home: NextPage = () => {
   const [open, setOpen] = React.useState(false);
@@ -51,6 +52,23 @@ const Home: NextPage = () => {
         <meta charSet="UTF-8" />
         <link rel="icon" href="/web-programming.png" />
       </Head>
+      <Script
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=G-JY7XB87G7C"
+      />
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-JY7XB87G7C');
+        `,
+        }}
+      />
       <Container maxWidth="xl">
         <Box
           sx={{

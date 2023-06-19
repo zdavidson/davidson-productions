@@ -1,11 +1,4 @@
-import {
-  Box,
-  Container,
-  Divider,
-  styled,
-  Tooltip,
-  Typography,
-} from "@mui/material";
+import { Box, Container, styled, Tooltip } from "@mui/material";
 import { useRouter } from "next/router";
 import Button from "../../components/button";
 import Navigation from "../../components/navigation";
