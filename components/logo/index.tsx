@@ -33,6 +33,7 @@ const Logo = ({
   marginLeft = 2,
 }: Props) => {
   const router = useRouter();
+  const route = router.route;
   return (
     <Box
       onClick={() => router.push("/")}
@@ -52,7 +53,17 @@ const Logo = ({
         width={width}
         height={height}
       />
-      <Typography variant={variant} sx={{ color: color, ml: marginLeft }}>
+      <Typography
+        variant={variant}
+        sx={{
+          color: color,
+          ml: marginLeft,
+          "@media (max-width:600px)": {
+            fontSize: route === "/academy" ? "2.5rem" : "auto",
+            ml: route === "/academy" ? 1 : marginLeft,
+          },
+        }}
+      >
         Davidson <br></br>Programming
       </Typography>
     </Box>

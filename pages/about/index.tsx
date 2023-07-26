@@ -35,6 +35,7 @@ const About = () => {
               justifyContent: "space-evenly",
               my: 18,
               "@media (max-width:600px)": {
+                alignItems: "center",
                 flexDirection: "column",
               },
             }}
@@ -45,6 +46,7 @@ const About = () => {
                   ml: 2,
                   "@media (max-width:600px)": {
                     ml: 0,
+                    textAlign: "center",
                     width: "90vw",
                   },
                 }}
@@ -61,9 +63,15 @@ const About = () => {
                   },
                 }}
               >
-                <Typography>
+                <Typography
+                  sx={{
+                    "@media (max-width:600px)": {
+                      textAlign: "center",
+                    },
+                  }}
+                >
                   Davidson Programming is a small but mighty team spearheaded by
-                  software engineer{" "}
+                  software engineer,{" "}
                   <a
                     target="_blank"
                     href="https://github.com/zdavidson"

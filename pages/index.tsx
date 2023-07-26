@@ -16,7 +16,6 @@ import { BaseSyntheticEvent, FormEvent } from "react";
 import { send } from "emailjs-com";
 import React from "react";
 import { COLORS } from "../styles/theme/lightThemeOptions";
-import Script from "next/script";
 
 const Home: NextPage = () => {
   const [open, setOpen] = React.useState(false);
@@ -52,23 +51,6 @@ const Home: NextPage = () => {
         <meta charSet="UTF-8" />
         <link rel="icon" href="/web-programming.png" />
       </Head>
-      <Script
-        strategy="afterInteractive"
-        src="https://www.googletagmanager.com/gtag/js?id=G-JY7XB87G7C"
-      />
-      <Script
-        id="google-analytics"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-        
-          gtag('config', 'G-JY7XB87G7C');
-        `,
-        }}
-      />
       <Container maxWidth="xl">
         <Box
           sx={{
@@ -85,12 +67,17 @@ const Home: NextPage = () => {
               display: "flex",
               justifyContent: "space-between",
               my: 18,
+
+              "@media (max-width:600px)": {
+                my: 10,
+              },
             }}
           >
             <Box>
               <Typography
                 sx={{
                   "@media (max-width:600px)": {
+                    textAlign: "center",
                     width: "90vw",
                   },
                 }}
@@ -107,7 +94,13 @@ const Home: NextPage = () => {
                   },
                 }}
               >
-                <Typography>
+                <Typography
+                  sx={{
+                    "@media (max-width:600px)": {
+                      textAlign: "center",
+                    },
+                  }}
+                >
                   Work with our team of world-class designers, developers, and
                   content creators to develop or improve your business’s web
                   presence.
@@ -133,6 +126,10 @@ const Home: NextPage = () => {
                   <Button
                     sx={{
                       mr: 4,
+
+                      "@media (max-width:600px)": {
+                        width: "90vw",
+                      },
                     }}
                     type="submit"
                   >
@@ -155,6 +152,11 @@ const Home: NextPage = () => {
                       borderRadius: 2,
                       "@media (max-width:600px)": {
                         mt: 2,
+                        width: "90vw",
+
+                        "#email": {
+                          textAlign: "center",
+                        },
                       },
                     }}
                     required

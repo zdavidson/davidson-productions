@@ -1,4 +1,4 @@
-import { Box, Container, styled, Tooltip } from "@mui/material";
+import { Box, Container, LinearProgress, styled, Tooltip } from "@mui/material";
 import { useRouter } from "next/router";
 import Button from "../../components/button";
 import Navigation from "../../components/navigation";
@@ -8,6 +8,7 @@ import { COLORS } from "../../styles/theme/lightThemeOptions";
 import { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
 import Head from "next/head";
 import Logo from "../../components/logo";
+import Script from "next/script";
 
 const Academy = () => {
   const router = useRouter();
@@ -41,6 +42,23 @@ const Academy = () => {
 
         <link rel="icon" href="/web-programming.png" />
       </Head>
+      <Script
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=G-JY7XB87G7C"
+      />
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-JY7XB87G7C');
+        `,
+        }}
+      />
       <Container maxWidth="xl">
         <Box
           sx={{
@@ -52,6 +70,17 @@ const Academy = () => {
           }}
         >
           <Logo width={100} height={90} variant="h2" marginLeft={5} />
+          <LinearProgress
+            color="inherit"
+            sx={{
+              mt: 6,
+              width: "30vw",
+              "@media (max-width:600px)": {
+                mt: 3,
+                width: "80vw",
+              },
+            }}
+          />
         </Box>
       </Container>
     </>

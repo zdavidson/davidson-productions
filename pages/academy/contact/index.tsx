@@ -77,6 +77,7 @@ const Contact = () => {
               <Typography
                 sx={{
                   "@media (max-width:600px)": {
+                    textAlign: "center",
                     width: "90vw",
                   },
                 }}
@@ -111,14 +112,26 @@ const Contact = () => {
                       id="name"
                       label="Name"
                       name="name"
-                      sx={{ borderRadius: 2, m: 1 }}
+                      sx={{
+                        borderRadius: 2,
+                        m: 1,
+                        "@media (max-width:600px)": {
+                          width: "85vw",
+                        },
+                      }}
                       required
                     />
                     <TextField
                       id="pronouns"
                       label="Pronouns"
                       name="pronouns"
-                      sx={{ borderRadius: 2, m: 1 }}
+                      sx={{
+                        borderRadius: 2,
+                        m: 1,
+                        "@media (max-width:600px)": {
+                          width: "85vw",
+                        },
+                      }}
                     />
                   </Box>
                   <TextField
@@ -129,6 +142,9 @@ const Contact = () => {
                       borderRadius: 2,
                       m: 1,
                       width: 250,
+                      "@media (max-width:600px)": {
+                        width: "85vw",
+                      },
                     }}
                     required
                   />
@@ -138,6 +154,7 @@ const Contact = () => {
                       mt: 2,
                       "@media (max-width:600px)": {
                         ml: 1,
+                        width: "85vw",
                       },
                     }}
                     type="submit"

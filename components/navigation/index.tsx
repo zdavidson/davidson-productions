@@ -85,7 +85,28 @@ const Navigation = ({ color }: Props) => {
             >
               <Link href="/academy/contact">Contact </Link>
             </Typography>
-          ) : null}
+          ) : (
+            <Typography
+              sx={{
+                color: color ?? COLORS.primary.black,
+                mx: 1,
+                textDecoration:
+                  route === "/about/contact" ? "underline" : "none",
+
+                "&:hover": {
+                  textDecoration: "underline",
+                },
+
+                "@media (min-width:600px)": {
+                  display: "none",
+                  flexDirection: "column",
+                },
+              }}
+              variant="body2"
+            >
+              <Link href="/about/contact">Contact </Link>
+            </Typography>
+          )}
           <Typography
             sx={{
               alignItems: "center",
