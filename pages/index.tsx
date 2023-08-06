@@ -66,7 +66,7 @@ const Home: NextPage = () => {
             sx={{
               display: "flex",
               justifyContent: "space-between",
-              my: 18,
+              my: 14,
 
               "@media (max-width:600px)": {
                 my: 10,
