@@ -36,7 +36,8 @@ const lightThemeOptions: ThemeOptions = {
 export const COLORS = {
   primary: {
     black: "#131214",
-    white: "#fffdf2",
+    // white: "#fffdf2",
+    white: "#ffffff",
   },
 };
 

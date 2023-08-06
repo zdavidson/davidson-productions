@@ -138,6 +138,10 @@ const Navigation = ({ color }: Props) => {
               : () => router.push("/about/contact")
           }
           sx={{
+            "&:hover": {
+              color: color ? COLORS.primary.black : COLORS.primary.white,
+            },
+
             "@media (max-width:600px)": {
               display: "none",
               flexDirection: "column",

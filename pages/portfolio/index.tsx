@@ -70,12 +70,41 @@ const About = () => {
                 display: "flex",
                 justifyContent: "space-between",
                 mt: 10,
+
                 "@media (max-width:600px)": {
                   alignItems: "center",
                   flexDirection: "column",
                 },
               }}
             >
+              <Box
+                sx={{
+                  backgroundColor: "#1a1a1a",
+                  display: "flex",
+                  alignItems: "center",
+                  height: 250,
+                  width: 250,
+                  mr: 8,
+
+                  "@media (max-width:600px)": {
+                    my: 1,
+                    mr: 0,
+                  },
+                }}
+              >
+                <a
+                  href="https://audiophile-seven.vercel.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Image
+                    alt="programmer"
+                    src="/audiophile.png"
+                    height={150}
+                    width={390}
+                  />
+                </a>
+              </Box>
               <Box
                 onClick={() => router.push("https://stacklet.io/")}
                 sx={{
@@ -101,7 +130,16 @@ const About = () => {
                   />
                 </a>
               </Box>
-              <Box sx={{ mx: 8 }}>
+              <Box
+                sx={{
+                  mx: 8,
+                  height: 250,
+                  width: 250,
+                  "@media (max-width:600px)": {
+                    my: 1,
+                  },
+                }}
+              >
                 <a
                   href="https://www.joincombo.com/"
                   target="_blank"
@@ -121,6 +159,9 @@ const About = () => {
                   height: 250,
                   width: 250,
                   px: 2,
+                  "@media (max-width:600px)": {
+                    my: 1,
+                  },
                 }}
               >
                 <a
