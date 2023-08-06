@@ -37,7 +37,7 @@ const About = () => {
               alignItems: "center",
               flexDirection: "column",
               justifyContent: "center",
-              my: 18,
+              my: 14,
             }}
           >
             <Typography

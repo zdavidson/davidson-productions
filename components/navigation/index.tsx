@@ -16,7 +16,14 @@ const Navigation = ({ color }: Props) => {
   const route = router.route;
 
   return (
-    <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "space-between",
+        borderBottom: `1.5px solid ${COLORS.primary.black}`,
+        paddingBottom: "2rem",
+      }}
+    >
       <Logo color={color} />
       <Box
         sx={{
