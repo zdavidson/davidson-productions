@@ -1,5 +1,5 @@
 import { Box, Container, LinearProgress, styled, Tooltip } from "@mui/material";
-import { useRouter } from "next/router";
+import { Router, useRouter } from "next/router";
 import Button from "../../components/button";
 import Navigation from "../../components/navigation";
 import OutlinedButton from "../../components/outlined-button";
@@ -9,6 +9,23 @@ import { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
 import Head from "next/head";
 import Logo from "../../components/logo";
 import Script from "next/script";
+import React from "react";
+
+function FacebookPixel() {
+  React.useEffect(() => {
+    import("react-facebook-pixel")
+      .then((x) => x.default)
+      .then((ReactPixel) => {
+        ReactPixel.init("669914231828608");
+        ReactPixel.pageView();
+
+        Router.events.on("routeChangeComplete", () => {
+          ReactPixel.pageView();
+        });
+      });
+  });
+  return null;
+}
 
 const Academy = () => {
   const router = useRouter();
@@ -42,6 +59,7 @@ const Academy = () => {
 
         <link rel="icon" href="/web-programming.png" />
       </Head>
+      <FacebookPixel />
       <Script
         strategy="afterInteractive"
         src="https://www.googletagmanager.com/gtag/js?id=G-JY7XB87G7C"
