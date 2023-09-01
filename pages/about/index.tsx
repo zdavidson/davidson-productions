@@ -101,10 +101,10 @@ const About = () => {
                   implementing eye-catching <b>ad content</b>, and increasing
                   quality <b>lead generation</b>.<br></br>
                   <br></br>
-                  We use tried and tested methods to achieve measurable results,
+                  {/* We use tried and tested methods to achieve measurable results,
                   and
                   <br></br>
-                  <br></br>
+                  <br></br> */}
                   <Button
                     sx={{
                       "@media (max-width:600px)": {
