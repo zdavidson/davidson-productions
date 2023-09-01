@@ -98,22 +98,34 @@ const Contact = () => {
                   },
                 }}
               >
-                Book a free 15-minute consultation,{" "}
-                <Link
-                  href="https://calendly.com/davidsonprogramming/free-consultation"
-                  target="_blank"
-                >
-                  <span
-                    style={{
-                      textDecoration: "underline",
-                    }}
-                  >
-                    here
-                  </span>
-                </Link>
-                , or reach out to us below and we will get back to you asap.
+                Book a free 15-minute consultation with us, so we can start
+                improving your conversions, today.{" "}
               </Typography>
-              <FormControl>
+              <br></br>
+              <Link
+                href="https://calendly.com/davidsonprogramming/free-consultation"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button
+                  sx={{
+                    "@media (max-width:600px)": {
+                      flexDirection: "column",
+                    },
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      alignItems: "center",
+                      display: "flex",
+                    }}
+                    variant="body2"
+                  >
+                    Book a Free Consultation
+                  </Typography>
+                </Button>
+              </Link>
+              {/* <FormControl>
                 <Box
                   component="form"
                   onSubmit={(e: FormEvent<HTMLDivElement>) => handleSubmit(e)}
@@ -202,7 +214,7 @@ const Contact = () => {
                     </Typography>
                   </Button>
                 </Box>
-              </FormControl>
+              </FormControl> */}
               <Snackbar open={open} autoHideDuration={4000} message="Sent!" />
             </Box>
             <Box

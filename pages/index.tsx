@@ -16,6 +16,7 @@ import { BaseSyntheticEvent, FormEvent } from "react";
 import { send } from "emailjs-com";
 import React from "react";
 import { COLORS } from "../styles/theme/lightThemeOptions";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   const [open, setOpen] = React.useState(false);
@@ -114,11 +115,39 @@ const Home: NextPage = () => {
                   }}
                 >
                   Work with our team of world-class designers, developers, and
-                  content creators to develop or improve your business’s web
+                  content creators to develop or improve your business’ web
                   presence.
                 </Typography>
               </Box>
-              <FormControl>
+              <br></br>
+              <Link
+                href="https://calendly.com/davidsonprogramming/free-consultation"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button
+                  sx={{
+                    ml: 2,
+                    "@media (max-width:600px)": {
+                      flexDirection: "column",
+                    },
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      alignItems: "center",
+                      display: "flex",
+                      "&:hover": {
+                        color: COLORS.primary.black,
+                      },
+                    }}
+                    variant="body2"
+                  >
+                    Book a Free Consultation
+                  </Typography>
+                </Button>
+              </Link>
+              {/* <FormControl>
                 <Box
                   component="form"
                   onSubmit={(e: FormEvent<HTMLDivElement>) => handleSubmit(e)}
@@ -175,7 +204,7 @@ const Home: NextPage = () => {
                   />
                 </Box>
                 <Snackbar open={open} autoHideDuration={4000} message="Sent!" />
-              </FormControl>
+              </FormControl> */}
             </Box>
             <Box
               sx={{
