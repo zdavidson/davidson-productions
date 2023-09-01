@@ -97,7 +97,7 @@ const About = () => {
                   <br></br>
                   <br></br>
                   Our team specializes in taking businesses to the next level by
-                  improving their web presence through enhancing <b>SEO</b>,
+                  improving their web presence, enhancing <b>SEO</b>,
                   implementing eye-catching <b>ad content</b>, and increasing
                   quality <b>lead generation</b>.<br></br>
                   <br></br>
