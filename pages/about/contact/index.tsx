@@ -14,6 +14,7 @@ import { send } from "emailjs-com";
 import { COLORS } from "../../../styles/theme/lightThemeOptions";
 import React from "react";
 import Head from "next/head";
+import Link from "next/link";
 
 const Contact = () => {
   const [open, setOpen] = React.useState(false);
@@ -84,6 +85,33 @@ const Contact = () => {
                 variant="h2"
               >
                 Interested?<br></br>Let&apos;s Talk.
+              </Typography>
+              <br></br>
+              <Typography
+                sx={{
+                  width: "38vw",
+                  "&:hover": { cursor: "pointer" },
+
+                  "@media (max-width:600px)": {
+                    textAlign: "center",
+                    width: "90vw",
+                  },
+                }}
+              >
+                Book a free 15-minute consultation,{" "}
+                <Link
+                  href="https://calendly.com/davidsonprogramming/free-consultation"
+                  target="_blank"
+                >
+                  <span
+                    style={{
+                      textDecoration: "underline",
+                    }}
+                  >
+                    here
+                  </span>
+                </Link>
+                , or reach out to us below and we will get back to you asap.
               </Typography>
               <FormControl>
                 <Box

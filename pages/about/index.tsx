@@ -3,8 +3,13 @@ import Navigation from "../../components/navigation";
 import Image from "next/image";
 import { COLORS } from "../../styles/theme/lightThemeOptions";
 import Head from "next/head";
+import Button from "../../components/outlined-button";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 const About = () => {
+  const router = useRouter();
+  const route = router.route;
   return (
     <>
       <Head>
@@ -70,23 +75,62 @@ const About = () => {
                     },
                   }}
                 >
-                  Davidson Programming is a small but mighty team spearheaded by
-                  software engineer,{" "}
+                  Davidson Programming is a team spearheaded by software
+                  engineer,{" "}
                   <a
                     target="_blank"
-                    href="https://github.com/zdavidson"
+                    href="https://www.linkedin.com/in/zo%C3%ABdavidson/"
                     rel="noreferrer"
                   >
-                    <span
-                      style={{
-                        cursor: "pointer",
-                        textDecoration: "underline",
-                      }}
-                    >
-                      Zoë Davidson
-                    </span>
+                    <b>
+                      <span
+                        style={{
+                          cursor: "pointer",
+                          textDecoration: "underline",
+                        }}
+                      >
+                        Zoë Davidson
+                      </span>
+                    </b>
                     .
                   </a>
+                  <br></br>
+                  <br></br>
+                  Our team specializes in taking businesses to the next level by
+                  improving their web presence through enhancing <b>SEO</b>,
+                  implementing eye-catching <b>ad content</b>, and increasing
+                  quality <b>lead generation</b>.<br></br>
+                  <br></br>
+                  We use tried and tested methods to achieve measurable results,
+                  and
+                  <br></br>
+                  <br></br>
+                  <Button
+                    sx={{
+                      "@media (max-width:600px)": {
+                        flexDirection: "column",
+                      },
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        alignItems: "center",
+                        color: COLORS.primary.black,
+                        display: "flex",
+                        "&:hover": {
+                          color: COLORS.primary.white,
+                        },
+                      }}
+                      variant="body2"
+                    >
+                      <Link
+                        href="https://calendly.com/davidsonprogramming/free-consultation"
+                        target="_blank"
+                      >
+                        Book a Free Consultation
+                      </Link>
+                    </Typography>
+                  </Button>
                 </Typography>
               </Box>
             </Box>

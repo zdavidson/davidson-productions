@@ -74,7 +74,7 @@ const Home: NextPage = () => {
             }}
           >
             <Box>
-              <Typography
+              {/* <Typography
                 sx={{
                   "@media (max-width:600px)": {
                     textAlign: "center",
@@ -84,6 +84,18 @@ const Home: NextPage = () => {
                 variant="h2"
               >
                 Develop your site.<br></br>Your way.
+              </Typography> */}
+              <Typography
+                sx={{
+                  ml: 2,
+                  "@media (max-width:600px)": {
+                    textAlign: "center",
+                    width: "90vw",
+                  },
+                }}
+                variant="h2"
+              >
+                Better SEO.<br></br>More conversions.<br></br>More sales.
               </Typography>
               <Box
                 sx={{
