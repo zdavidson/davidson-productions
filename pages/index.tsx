@@ -17,6 +17,7 @@ import { send } from "emailjs-com";
 import React from "react";
 import { COLORS } from "../styles/theme/lightThemeOptions";
 import Link from "next/link";
+import OutlinedButton from "../components/outlined-button";
 
 const Home: NextPage = () => {
   const [open, setOpen] = React.useState(false);
@@ -42,31 +43,46 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Davidson Programming</title>
+        <title>Davidson Productions</title>
         <meta
           name="description"
-          content="Davidson Programming. A full stack web development company."
+          content="Davidson Productions. A Washington, DC film production company."
         />
-        <meta name="robots" content="index, nofollow" />
+        <meta name="robots" content="index" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="UTF-8" />
         <link rel="icon" href="/web-programming.png" />
       </Head>
-      <Container maxWidth="xl">
+      <video
+        autoPlay
+        muted
+        loop
+        style={{
+          zIndex: -1,
+          objectFit: "cover",
+          width: "100%",
+          height: "100%",
+          position: "fixed",
+          top: 0,
+        }}
+      >
+        <source src="/2020_Website_Background.mp4" type="video/mp4" />
+      </video>
+      <Container maxWidth="xl" sx={{ backgroundColor: "transparent" }}>
         <Box
           sx={{
             mt: 5,
-
+            backgroundColor: "transparent",
             "@media (min-width:600px)": {
               mx: 12,
             },
           }}
         >
-          <Navigation />
+          <Navigation color={COLORS.primary.white} />
           <Box
             sx={{
               display: "flex",
-              justifyContent: "space-between",
+              justifyContent: "center",
               my: 14,
 
               "@media (max-width:600px)": {
@@ -74,29 +90,16 @@ const Home: NextPage = () => {
               },
             }}
           >
-            <Box>
-              {/* <Typography
-                sx={{
-                  "@media (max-width:600px)": {
-                    textAlign: "center",
-                    width: "90vw",
-                  },
-                }}
-                variant="h2"
-              >
-                Develop your site.<br></br>Your way.
-              </Typography> */}
+            <Box sx={{ display: "flex", flexDirection: "column" }}>
               <Typography
                 sx={{
-                  ml: 2,
-                  "@media (max-width:600px)": {
-                    textAlign: "center",
-                    width: "90vw",
-                  },
+                  color: COLORS.primary.white,
+                  textAlign: "center",
                 }}
                 variant="h2"
               >
-                Better SEO.<br></br>More conversions.<br></br>More sales.
+                Your Great Idea.<br></br>
+                <mark>Our Cameras.</mark>
               </Typography>
               <Box
                 sx={{
@@ -109,116 +112,81 @@ const Home: NextPage = () => {
               >
                 <Typography
                   sx={{
-                    "@media (max-width:600px)": {
-                      textAlign: "center",
-                    },
+                    color: COLORS.primary.white,
+                    textAlign: "center",
                   }}
                 >
-                  Work with our team of world-class designers, developers, and
-                  content creators to develop or improve your business’ web
-                  presence.
+                  Work with our team of world-class cinematographers, producers,
+                  and editors to bring your next film, commercial, or idea to
+                  life.
                 </Typography>
               </Box>
               <br></br>
-              <Link
-                href="https://calendly.com/davidsonprogramming/free-consultation"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Button
-                  sx={{
-                    ml: 2,
-                    "@media (max-width:600px)": {
-                      flexDirection: "column",
-                    },
-                  }}
-                >
-                  <Typography
-                    sx={{
-                      alignItems: "center",
-                      display: "flex",
-                      "&:hover": {
-                        color: COLORS.primary.black,
-                      },
-                    }}
-                    variant="body2"
-                  >
-                    Book a Free Consultation
-                  </Typography>
-                </Button>
-              </Link>
-              {/* <FormControl>
-                <Box
-                  component="form"
-                  onSubmit={(e: FormEvent<HTMLDivElement>) => handleSubmit(e)}
-                  sx={{
-                    display: "flex",
-                    "@media (min-width:600px)": {
-                      ml: 2,
-                    },
-                    "@media (max-width:600px)": {
-                      alignItems: "flex-start",
-                      display: "flex",
-                      flexDirection: "column",
-                    },
-                    mt: 6,
-                  }}
+              <Box sx={{ display: "flex", justifyContent: "center" }}>
+                <Link
+                  href="mailto:zoe.a.h.davidson@gmail.com"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   <Button
                     sx={{
-                      mr: 4,
-
+                      ml: 2,
+                      maxWidth: "20rem",
+                      alignSelf: "center",
+                      color: COLORS.primary.white,
                       "@media (max-width:600px)": {
-                        width: "90vw",
+                        flexDirection: "column",
                       },
                     }}
-                    type="submit"
                   >
                     <Typography
                       sx={{
                         alignItems: "center",
                         display: "flex",
+                        color: COLORS.primary.white,
+                        "&:hover": {
+                          color: COLORS.primary.black,
+                        },
                       }}
                       variant="body2"
                     >
-                      Request a free consult{" "}
-                      <ArrowRightAltIcon sx={{ fontSize: "large", ml: 1 }} />
+                      Get a Quote
                     </Typography>
                   </Button>
-                  <TextField
-                    id="email"
-                    name="email"
-                    placeholder="Your email address..."
+                </Link>
+                <Link
+                  href="https://vimeo.com/zoedavidson"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <OutlinedButton
+                    color={COLORS.primary.white}
                     sx={{
-                      borderRadius: 2,
+                      ml: 2,
+                      py: 1,
+                      maxWidth: "20rem",
+                      alignSelf: "center",
                       "@media (max-width:600px)": {
-                        mt: 2,
-                        width: "90vw",
-
-                        "#email": {
-                          textAlign: "center",
-                        },
+                        flexDirection: "column",
                       },
                     }}
-                    required
-                  />
-                </Box>
-                <Snackbar open={open} autoHideDuration={4000} message="Sent!" />
-              </FormControl> */}
-            </Box>
-            <Box
-              sx={{
-                "@media (max-width:600px)": {
-                  display: "none",
-                },
-              }}
-            >
-              <Image
-                alt="user-with-laptop"
-                src="/laptop.jpg"
-                height={521}
-                width={400}
-              />
+                  >
+                    <Typography
+                      sx={{
+                        alignItems: "center",
+                        display: "flex",
+                        color: COLORS.primary.white,
+                        "&:hover": {
+                          color: COLORS.primary.black,
+                        },
+                      }}
+                      variant="body2"
+                    >
+                      See Our Work
+                    </Typography>
+                  </OutlinedButton>
+                </Link>
+              </Box>
             </Box>
           </Box>
         </Box>
@@ -230,7 +198,12 @@ const Home: NextPage = () => {
           backgroundColor: COLORS.primary.black,
           display: "flex",
           height: "30vh",
+          marginTop: "15rem",
           width: "100%",
+
+          "@media (max-width:600px)": {
+            marginTop: "0",
+          },
         }}
       >
         <Container maxWidth="xl">
@@ -243,7 +216,7 @@ const Home: NextPage = () => {
               },
             }}
           >
-            <Navigation color="white" />
+            <Navigation color="white" sx={{ borderBottom: "none" }} bottom />
           </Box>
         </Container>
       </Box>

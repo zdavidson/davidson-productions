@@ -10,12 +10,12 @@ const About = () => {
   return (
     <>
       <Head>
-        <title>Davidson Programming</title>
+        <title>Davidson Productions</title>
         <meta
           name="description"
-          content="Davidson Programming. A full stack web development company."
+          content="Davidson Productions. A Washington, DC film production company."
         />
-        <meta name="robots" content="index, nofollow" />
+        <meta name="robots" content="index" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="UTF-8" />
         <link rel="icon" href="/web-programming.png" />

@@ -11,9 +11,9 @@ const lightThemeOptions: ThemeOptions = {
       fontWeight: 400,
     },
     h2: {
-      fontSize: 70,
-      "@media (min-width:600px)": {
-        fontSize: 80,
+      fontSize: 90,
+      "@media (max-width:600px)": {
+        fontSize: 60,
       },
       fontWeight: 600,
       letterSpacing: -3,

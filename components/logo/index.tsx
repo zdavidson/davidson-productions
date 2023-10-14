@@ -47,24 +47,23 @@ const Logo = ({
         },
       }}
     >
-      <Image
-        src={color ? "/web-programming-white.png" : "/web-programming.png"}
+      {/* <Image
+        src={color ? "/video-camera.png" : "/web-programming.png"}
         alt="logo"
         width={width}
         height={height}
-      />
+      /> */}
       <Typography
         variant={variant}
         sx={{
           color: color,
-          ml: marginLeft,
+
           "@media (max-width:600px)": {
             fontSize: route === "/academy" ? "2.5rem" : "auto",
-            ml: route === "/academy" ? 1 : marginLeft,
           },
         }}
       >
-        Davidson <br></br>Programming
+        Davidson <br></br>Productions
       </Typography>
     </Box>
   );
